@@ -32,18 +32,19 @@ app.post('/login', (request, response) => {
     const username = request.body.username;
     const password = request.body.password;
 
-    const mockUsername = "billyTheKid";
-    const mockPassword = "superSikrit";
+    const mockUsername = 'billyTheKid';
+    const mockPassword = 'superSikrit';
 
     if (username === mockUsername && password === mockPassword) {
         response.json({
             success: true,
-            message: "User succesfully logged in."
+            message: 'User succesfully logged in.'
         });
     } else {
         response.json({
             success: false,
-            message: "Username and passowrd don't match."
+            message: 'Username and passowrd don' / 't match.',
+            token: 'Encrypted token goes here'
         })
     }
 });
