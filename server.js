@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const middleware = require('./middleware.js');
 
 app.use(bodyParser.json())
 
@@ -20,6 +19,11 @@ app.get('/users',function(req,res){
 // colons are used as variables that be viewed in the params
 app.get('/users/:id',function(req,res){
 	console.log(req.params.id)
+	res.json({
+		success: true,
+		message: 'got one user',
+		user: req.params.id
+	})
 })
 
 app.post('/login',function(req,res){
